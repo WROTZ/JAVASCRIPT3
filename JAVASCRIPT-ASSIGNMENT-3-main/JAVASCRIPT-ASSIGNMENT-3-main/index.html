@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seating Arrangement</title>
+</head>
+<body>
+    <h1>Seating Arrangement</h1>
+
+    <label for="seatNumber">Enter Seat Number:</label>
+    <input type="number" id="seatNumber" min="1" max="72" required>
+
+    <label for="rowNumber">Enter Row Number:</label>
+    <input type="number" id="rowNumber" min="1" max="18" required>
+
+    <button id="calculateButton">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("calculateButton").addEventListener("click", function () {
+            const seatNumber = parseInt(document.getElementById("seatNumber").value);
+            const rowNumber = parseInt(document.getElementById("rowNumber").value);
+            let result = "";
+
+            if (seatNumber >= 1 && seatNumber <= 72 && rowNumber >= 1 && rowNumber <= 18) {
+                
+                result = "Your seat is: " + Java.getSeatingArrangement(seatNumber, rowNumber);
+            } else {
+                result = "Invalid seat number or row number.";
+            }
+
+            document.getElementById("result").textContent = result;
+        });
+
+        const Java = {
+            getSeatingArrangement: function(seatNumber, rowNumber) {
+                
+            }
+        };
+    </script>
+</body>
+</html>
